@@ -11,7 +11,7 @@ namespace Conduit.Features.Articles
             return articles
                 .Include(x => x.Author)
                 .Include(x => x.ArticleFavorites)
-                .Include(x => x.ArticleTags)
+                //.Include(x => x.ArticleTags)
                 .AsNoTracking();
         }
     }

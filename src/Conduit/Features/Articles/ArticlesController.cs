@@ -44,6 +44,12 @@ namespace Conduit.Features.Articles
             return await _mediator.Send(command);
         }
 
+        [HttpPost("anonymous")]
+        public async Task<ArticleEnvelope> CreateAnonymous([FromBody] CreateAnonymous.Command command)
+        {
+            return await _mediator.Send(command);
+        }
+
         [HttpPut("{slug}")]
         [Authorize(AuthenticationSchemes = JwtIssuerOptions.Schemes)]
         public async Task<ArticleEnvelope> Edit(string slug, [FromBody]Edit.Command command)
